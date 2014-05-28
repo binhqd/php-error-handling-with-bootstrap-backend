@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2014-05-28 08:44:51
+Date: 2014-05-28 10:54:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,9 +33,7 @@ CREATE TABLE `errors` (
   `post_data` text,
   `browser` varchar(255) DEFAULT NULL,
   `traces` text,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `line` (`line`,`file`),
+  KEY `line_2` (`line`,`request_method`,`file`,`uri`)
 ) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of errors
--- ----------------------------
